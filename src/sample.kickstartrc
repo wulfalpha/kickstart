@@ -1,0 +1,71 @@
+# Kickstart Configuration File
+# Format: extension=program [flags...]
+# Use quotes for arguments with spaces: program "arg with spaces"
+# Use backslashes to escape special characters: program arg\ with\ spaces
+#
+# Config validation runs automatically on each use
+# For verbose validation output: export KICKSTART_VERBOSE=1
+
+# Text & Documentation
+md=typora --new-window
+org=emacs
+txt=zeditor
+log=less -S
+rst=zeditor
+
+# Images
+png=xviewer --fullscreen
+bmp=xviewer
+jpg=xviewer
+gif=xviewer
+jpeg=xviewer
+webp=xviewer
+svg=inkscape
+
+# Documents
+pdf=evince --fullscreen
+docx=libreoffice --writer
+xlsx=libreoffice --calc
+pptx=libreoffice --impress
+
+# code files
+py=zeditor
+js=zeditor
+rs=zeditor
+zig=zeditor
+c=zeditor
+cpp=zeditor
+h=zeditor
+html=zeditor
+css=zeditor
+json=zeditor
+
+# Video
+mp4=mpv --fs --loop
+mkv=mpv --fs
+avi=mpv
+mov=mpv
+webm=mpv
+
+# Audio
+mp3=mpv --no-video
+wav=mpv --no-video
+flac=mpv --no-video
+ogg=mpv --no-video
+
+# Archives
+zip=file-roller
+tar=file-roller
+gz=file-roller
+7z=file-roller
+
+# Terminal programs (detected automatically)
+# These will be opened in a terminal emulator
+termPrograms=nvim,vim,micro,nano,less,more,htop,man,top
+
+# Custom terminal emulator (optional)
+# myTerm=ghostty
+# myArg=-e
+
+# Default program for unknown file types
+default=zeditor

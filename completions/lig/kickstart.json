@@ -1,0 +1,103 @@
+{
+  "name": "kickstart",
+  "description": "Open files with configured programs without changing system associations",
+  "options": [
+    {
+      "name": [
+        "-h",
+        "--help"
+      ],
+      "description": "Show usage and configuration help"
+    },
+    {
+      "name": [
+        "-v",
+        "--verbose"
+      ],
+      "description": "Show matching rules and exact launch arguments"
+    },
+    {
+      "name": "--config",
+      "description": "Use a specific config file instead of the default platform or XDG config",
+      "args": {
+        "name": "path",
+        "template": "filepaths"
+      }
+    },
+    {
+      "name": "--program",
+      "description": "Use a program once; quote commands containing arguments (conflicts with --with)",
+      "args": {
+        "name": "command",
+        "description": "Executable or quoted command, for example 'code --wait'"
+      }
+    },
+    {
+      "name": "--with",
+      "description": "Select a named action from the config (conflicts with --program)",
+      "args": {
+        "name": "action",
+        "description": "Action configured using extension:action or default:action rules"
+      }
+    },
+    {
+      "name": "--terminal",
+      "description": "Choose how to launch terminal applications (default: auto)",
+      "args": {
+        "name": "mode",
+        "suggestions": [
+          {
+            "name": "auto",
+            "description": "Open recognized terminal programs in a new terminal"
+          },
+          {
+            "name": "current",
+            "description": "Run directly in the current terminal"
+          },
+          {
+            "name": "new",
+            "description": "Always launch in a new terminal"
+          },
+          {
+            "name": "gui",
+            "description": "Launch directly without wrapping in a terminal"
+          }
+        ]
+      }
+    },
+    {
+      "name": "--batch",
+      "description": "Pass all selected files to one command; file mappings must agree"
+    },
+    {
+      "name": [
+        "--dry-run",
+        "--explain"
+      ],
+      "description": "Show config, matching rules and exact argv without launching"
+    },
+    {
+      "name": "--check-config",
+      "description": "Validate all configured executables without opening files"
+    },
+    {
+      "name": "--",
+      "description": "Treat all remaining arguments as filenames, including names beginning with a dash"
+    },
+    {
+      "name": "--gen-config",
+      "description": "Create a sample at the preferred config path without overwriting existing files"
+    },
+    {
+      "name": "--show-config-path",
+      "description": "Print the config path selected for reading without creating files"
+    }
+  ],
+  "args": {
+    "name": "file",
+    "description": "One or more files to open",
+    "isOptional": true,
+    "isVariadic": true,
+    "template": "filepaths"
+  }
+}
